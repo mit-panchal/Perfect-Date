@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+        /* CSS goes here */
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #ffc300; */
+            background: url('https://source.unsplash.com/1600x900/?landscape');
+            background-repeat: no-repeat;
+            /* background-position: center; */
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .profilePic {
+            height: 30vh;
+            width: auto;
+            border-radius: 50%;
+            /* align-content: center; */
+            margin-top: 7%;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .form1 {
+            margin-top: 10%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin-bottom: 2%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+            background-color: #f0d57c;
+        }
+
+        .accordion {
+            margin-top: 5%;
+            background-color: #f0d57c;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            border-radius: 10px;
+        }
+
+        .nav a {
+            color: black;
+        }
+
+        .nav a:hover {
+
+            color: antiquewhite;
+            text-decoration: underline;
+        }
+
+        .nav {
+            background-color: #f0d57c;
+        }
+
+        button:active {
+            color: black;
+            background-color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class=" nav navbar navbar-expand-lg  fixed-top mb-5 ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-size: larger;">Perfect Date</a>
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                </ul>
+                <ul class="navbar-nav " style="font-size:larger;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ex2.html">Log out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="premuim.html">
+                            premuim
+                        </a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRifV3RIprnL4_-ZPwLX8Q8pnrgM7NtJ8jmoYoJAEoRGSusms7qritvgIL2QYSKOHdHeFQ&usqp=CAU"
+            class="img-thumbnail mx-auto d-block profilePic">
+    </div>
+    <div class="container">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        My Basics
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        <form>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" value="Smit Tankariya" required />
+                            <label for="age">Age:</label>
+                            <input type="text" id="age" name="age" value="19" required />
+                            <label for="gender">Gender:</label>
+                            <input type="text" id="gender" name="gender" />
+                            <label for="occupation">Occupation:</label>
+                            <input type="text" id="occupation" name="occupation" />
+                            <label for="degree">Degree:</label>
+                            <input type="text" id="degree" name="degree" />
+                            <label for="htown">Hometown:</label>
+                            <input type="text" id="htown" name="htown" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        Connect
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingTwo">
+                    <div class="accordion-body">
+                        <form>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" value="smit12@gmail.com" required />
+                            <label for="phone">Phone:</label>
+                            <input type="text" id="phone" name="phone" />
+                            <label for="instaID">Instagram ID:</label>
+                            <input type="text" id="instaID" name="instagram" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        My Interests
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body">
+                        <form>
+                            <label for="sports">Sports:</label>
+                            <input type="text" id="sports" name="sports" />
+                            <label for="movies">Movies:</label>
+                            <input type="text" id="movies" name="movies" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseFour">
+                        More About Me
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingFour">
+                    <div class="accordion-body">
+                        <form>
+                            <form>
+                                <label for="bio">Bio:</label>
+                                <input type="text" id="bio" name="bio" />
+                                <label for="height">Height:</label>
+                                <input type="text" id="height" name="height" />
+                                <label for="exercise">Exercise:</label>
+                                <input type="text" id="exercise" name="exercise" />
+                                <label for="drink">Drinking:</label>
+                                <input type="text" id="drink" name="drink" />
+                                <label for="smoke">Smoking:</label>
+                                <input type="text" id="smoke" name="smoke" />
+                                <label for="religion">Religion:</label>
+                                <input type="text" id="religion" name="religion" />
+                                <label for="starsign">Star Sign:</label>
+                                <input type="text" id="starsign" name="starsign" />
+                                <!-- <button type="submit">Save</button> -->
+                            </form>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

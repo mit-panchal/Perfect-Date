@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @keyframes slide-in {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-100%);
+
+            }
+        }
+
+        /* Apply the animation to an element */
+        .container-fluidd {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: slide-in 4s ease;
+            animation-delay: 1s;
+            transition: transform 1s ease;
+            position: absolute;
+        }
+
+        #hideMe {
+            -moz-animation: cssAnimation 0s ease-in 5s forwards;
+            /* Firefox */
+            -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+            /* Safari and Chrome */
+            -o-animation: cssAnimation 0s ease-in 5s forwards;
+            /* Opera */
+            animation: cssAnimation 0s ease-in 5s forwards;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes cssAnimation {
+            to {
+                width: 0;
+                height: 0;
+                overflow: hidden;
+            }
+        }
+
+        @-webkit-keyframes cssAnimation {
+            to {
+                width: 0;
+                height: 0;
+                visibility: hidden;
+            }
+        }
+
+        .parallax {
+            /* The image used */
+            background-image: url("photos/photo1.jpg");
+
+            /* Set a specific height */
+            height: 100vh;
+            width: auto;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* z-index: -1; */
+            /* position: absolute; */
+        }
+
+        .reveal {
+            position: relative;
+            opacity: 0;
+        }
+
+        .reveal.active {
+            opacity: 1;
+        }
+
+        .active.fade-bottom {
+            animation: fade-bottom 1s ease-in;
+        }
+
+        .active.fade-left {
+            animation: fade-left 1s ease-in;
+        }
+
+        .active.fade-right {
+            animation: fade-right 1s ease-in;
+
+        }
+
+        @keyframes fade-bottom {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-left {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-right {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: #692a61;
+        }
+
+
+        #carousal {
+            height: 70vh;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: xx-large;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            /* background-color: white; */
+            padding-block: 15px;
+            z-index: 9;
+        }
+
+        .navbar a {
+            text-decoration: none;
+        }
+
+        .logo {
+            margin-right: 10px;
+            font-family: 'Gotham';
+            font-weight: 500;
+            font-size: larger;
+        }
+
+        .list {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            font-size: large;
+
+        }
+
+        #toggler,
+        .navbar label {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .menu {
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+            }
+
+            .list {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .navbar label {
+                display: inline-flex;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            #toggler:checked~.menu {
+                max-height: 100%;
+            }
+        }
+
+        .footer-section {
+            width: 100%;
+            display: flex;
+            color: white;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 1rem 0;
+            background-color: rgb(32, 30, 30);
+        }
+
+        .footer-section h2 {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .footer-section h2::after {
+            content: '';
+            width: 6rem;
+            height: .2rem;
+            background: #e65b00;
+            position: absolute;
+            top: 2.5rem;
+            left: 0;
+        }
+
+        .footer-section p {
+            transition: all .2s linear;
+            margin-bottom: .6em;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        .footer-section p:hover {
+            transition: all .2s linear;
+            transform: translateX(4px);
+        }
+
+        .footer-section a:hover {
+            color: #f46d13;
+        }
+
+        .footer-item {
+            margin: 1rem;
+        }
+
+        .footer-item ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .footer-item li {
+            margin-right: 1rem;
+        }
+
+        .social ul li {
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all .2s linear;
+        }
+
+        .social ul li:hover {
+            color: #e65b00;
+            transform: scale(1.1);
+            transition: all .2s linear;
+        }
+
+        @media screen and (max-width: 320px) {
+            .footer-section {
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-left: 2rem;
+            }
+        }
+
+        .button {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .nav a {
+            color: white;
+        }
+
+        .nav a:hover {
+
+            color: antiquewhite;
+            text-decoration: underline;
+        }
+
+        nav.dark a {
+            /* background-color: white; */
+            color: purple;
+        }
+
+        nav.dark {
+            background-color: white;
+        }
+
+        nav.light {
+            background-color: rgb(32, 30, 30);
+        }
+
+        nav.light a {
+            color: white;
+        }
+
+        /* .w-100 {
+            position: relative;
+        } */
+
+        /* aukad bahar */
+    </style>
+    <script>function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("scroll", reveal);
+        document.onscroll = function () {
+            const specs = document.querySelector('#specs');
+            const spect = document.querySelector('#spect');
+            const nav = document.querySelector('nav');
+
+            if (specs.getBoundingClientRect().top <= 0) { // if the distance of the 'specs' section to the browser top is smaller than 0
+                nav.classList.add('dark'); // add dark font color
+            }
+            else {
+                nav.classList.remove('dark');
+                nav.classList.remove('light');
+                // remove dark  font color
+            }
+            if (spect.getBoundingClientRect().top <= 0) {
+                nav.classList.remove('dark');
+                nav.classList.add('light');
+            }
+            else {
+                // nav.classList.remove('dark');
+                nav.classList.remove('light');
+                // remove dark  font color
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="d-none d-lg-block" id="hideMe">
+        <div class="container-fluidd " id="container" style="background-color: black; height:790px;width: 1440px;">
+            <video autoplay muted id="myVideo" style="height:30%;width:70% ;">
+                <source src="photos/PD_final.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div>
+    <div class="d-none d-md-block image-fluid" id="div2">
+        <div class="parallax"></div>
+        <button type="button" class="button btn btn-outline-light"><a href="login.html">Join US</a></button>
+    </div>
+    <!-- navbar -->
+    <nav class=" nav navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-size: larger;">Perfect Date</a>
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                </ul>
+                <ul class="navbar-nav " style="font-size:larger;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Sign up</a>
+                    </li>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid specs p-5 " id="specs">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="container reveal fade-bottom">
+                    <hr class="my-5">
+                    <div class="row featurette">
+                        <div class="col-md-7">
+                            <h1 class="featurette-heading display-5">About us and What we do?!</h1>
+                            <p class="lead ">
+                            <div>
+                                <h2 class="display-6">Looking for a better online dating experience?</h2>
+                                <ul class="fs-5">
+                                    <li>Advanced matching algorithm for compatible partners</li>
+                                    <li>Increased chances of finding true love</li>
+                                    <li>Privacy and security as our top priority</li>
+                                    <li>State-of-the-art encryption and security measures</li>
+                                    <li>Easy-to-use interface for creating profiles, browsing matches, and sending
+                                        messages</li>
+                                    <li>24/7 customer support available</li>
+                                </ul>
+                                <p class="fs-5">Join our community today and start your journey to finding the love
+                                    of
+                                    your life.</p>
+                            </div>
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="photos/p1.jpg" style="height: 90%;" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <hr class="my-5">
+                </div>
+                <div class="container reveal fade-left">
+                    <div class="row featurette">
+                        <div class="col-md-7 order-md-2">
+                            <h1 class="featurette-heading display-5">Why choose us?</h1>
+                            <p class="lead fs-3">We are one of the top website this is the reasons why you should
+                                choose us:
+                            </p>
+                            <ul class="fs-5">
+                                <li>Get 24/7 assistance.</li>
+                                <li>Easy to use.</li>
+                                <li>Special features.</li>
+                                <li>text</li>
+                                <li>This may be the last time you have to use a dating website.</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5 order-md-1">
+                            <img src="photos/P2.jpg" style="height: 45vh;" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <hr class="my-5">
+
+                </div>
+                <div class="container reveal fade-right">
+                    <div class="row featurette">
+                        <div class="col-md-7">
+                            <h1 class="featurette-heading display-5">Our Community</h1>
+                            <p class="lead">
+                            <div class="container">
+                                <div class="row ">
+                                    <div class="col-lg-8">
+                                        <h2 class="mb-4 display-6">Looking for more than just a dating site?
+                                        </h2>
+                                        <ul class="fs-5">
+                                            <li>A community of like-minded individuals</li>
+                                            <li>Safe and welcoming space for members to connect</li>
+                                            <li>Fostering a diverse and inclusive community</li>
+                                            <li>Looking for lifelong partners or new friends</li>
+                                            <li>Support every step of the way</li>
+                                        </ul>
+                                        <p class="lead text-center fs-5">Join our growing community today.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="photos/P3.jpg" style="height: 90%;" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <hr class="my-5">
+                </div>
+                <div class="container reveal fade-left">
+                    <div class="row featurette">
+                        <div class="col-md-7 order-md-2">
+                            <h1 class="featurette-heading display-5">How we match you?</h1>
+                            <div class="container">
+                                <p class="lead">
+                                <ul class="fs-5">
+                                    <li>We use a sophisticated matching algorithm to pair you with compatible
+                                        partners
+                                        who share your values and interests</li>
+                                    <li>Our algorithm takes into account a variety of factors, including your
+                                        personality traits, relationship goals, and location</li>
+                                    <li>We offer a range of search options, so you can easily filter your matches
+                                        based
+                                        on specific criteria such as age, education, and lifestyle</li>
+                                    <li>Our goal is to make finding a partner as easy and enjoyable as possible, so
+                                        you
+                                        can focus on building a meaningful connection</li>
+                                    <li>Join us today and let our algorithm do the work for you</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-5 order-md-1">
+                            <img src="photos/P4.jpg" style="height:50vh" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <hr class="my-5">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid spect" id="spect"
+        style="background-color:rgb(32, 30, 30);height: 600px;width:auto;justify-content: center;">
+        <div class="carousell">
+            <div class="carousell-item">
+                <div class="carousell-box">
+                    <div class="title">"Perfect Date is amazing! Found the love of my life here. Thank you!" - Sarah
+                        D.
+                    </div>
+                    <div class="num">01</div>
+                    <img
+                        src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&w=0&k=20&c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g=" />
+                </div>
+            </div>
+
+            <div class="carousell-item">
+                <div class="carousell-box">
+                    <div class="title">"This site is perfect for finding quality matches. Highly recommend giving it
+                        a
+                        try!" - Matthew L.</div>
+                    <div class="num">02</div>
+                    <img
+                        src="https://media.istockphoto.com/id/1150545984/it/foto/palazzo-moderno-di-lusso-con-piscina.jpg?s=612x612&w=0&k=20&c=Pbrai_VGc9tUviMCF1UaBErdS1YGyIVWsD29jzMZwTY=" />
+                </div>
+            </div>
+
+            <div class="carousell-item">
+                <div class="carousell-box">
+                    <div class="title">"Perfect Date is a game-changer. So many wonderful people to connect with.
+                        Thank
+                        you!" - Daniel R.</div>
+                    <div class="num">03</div>
+                    <img
+                        src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&w=0&k=20&c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I=" />
+                </div>
+            </div>
+
+            <div class="carousell-item">
+                <div class="carousell-box">
+                    <div class="title">"I've never had so much success on a dating site before. Perfect Date is the
+                        real
+                        deal!" - Katie B.</div>
+                    <div class="num">04</div>
+                    <img
+                        src="https://media.istockphoto.com/id/904390980/it/foto/foto-di-architettura-contemporanea-astratta.jpg?s=612x612&w=0&k=20&c=_P4Wmx5nq5MeDuimpNklKCBlrLovmCyd9lfiMKeJZDs=" />
+                </div>
+            </div>
+
+            <div class="carousell-item">
+                <div class="carousell-box">
+                    <div class="title">"I'm so glad I found Perfect Date. It's the best dating site I've ever used!"
+                        -
+                        Jacob S.</div>
+                    <div class="num">05</div>
+                    <img
+                        src="https://media.istockphoto.com/id/130408311/it/foto/piscina-allesterno-della-casa-moderna-al-crepuscolo.jpg?s=612x612&w=0&k=20&c=ZoVjx7uDjoHKmpM1ayW6UR1SQOoYh_xx-QMG_qeOYs0=" />
+                </div>
+            </div>
+
+            <div class="carousell-item">
+                <div class="carousell-box">
+                    <div class="title">"Found my soulmate on Perfect Date. I'm forever grateful for this amazing
+                        site!"
+                        - Amanda M.</div>
+                    <div class="num">06</div>
+                    <div class="num"
+                        style="font-size:x-large;padding-top: 50%; justify-content: center; display: flex; align-items: center;">
+                        <P></P>
+                    </div>
+                    <img
+                        src="https://media.istockphoto.com/id/1299954175/it/foto/villa-cubica-moderna.jpg?s=612x612&w=0&k=20&c=DhGhb3c1E3DW_fbrWJ_R_Zh0Lbwu6syFeRLsKlZ9no8=" />
+                </div>
+            </div>
+
+            <div class="carousell-item">
+                <div class="carousell-box">
+                    <div class="title">Amazing site with quality matches. Perfect Date helped me find love. Highly
+                        recommend!" - Laura H.</div>
+                    <div class="num">07</div>
+                    <img
+                        src="https://media.istockphoto.com/id/926689776/it/foto/vista-ad-angolo-basso-dei-grattacieli-di-new-york.jpg?s=612x612&w=0&k=20&c=DmEB0Ty7ZwDnBoU5SuA8FNevOp4G1UcECw5aS4vA9A8=" />
+                </div>
+            </div>
+
+            <div class="carousell-item">
+                <div class="carousell-box">
+                    <div class="title">"If you're looking for a great dating site, look no further than Perfect
+                        Date.
+                        It's the best!" - Brian W.</div>
+                    <div class="num">08</div>
+                    <img
+                        src="https://media.istockphoto.com/id/1191376167/it/foto/villa-dellisola.jpg?s=612x612&w=0&k=20&c=PKslWo4FdbjinohKQlK_oWL34jqAsnzMTdy2bxEAf-I=" />
+                </div>
+            </div>
+
+            <div class="carousell-item">
+                <div class="carousell-box">
+                    <div class="title">"I've had some amazing dates thanks to Perfect Date. This site is a
+                        game-changer!" - Nicholas T.</div>
+                    <div class="num">09</div>
+                    <img
+                        src="https://media.istockphoto.com/id/184316397/it/foto/londra-edifici-aziendali.jpg?s=612x612&w=0&k=20&c=XqrRxEPzFnwRFk7PQrCiu9-FPfCTPyMe5BKKaxYXCs8=" />
+                </div>
+            </div>
+            <div class="carousell-item">
+                <div class="carousell-box">
+                    <div class="title">"Perfect Date is the real deal. It's filled with quality matches and amazing
+                        people!" - Meghan F.</div>
+                    <div class="num">10</div>
+                    <img
+                        src="https://media.istockphoto.com/id/184619832/it/foto/distretto-finanziario-al-crepuscolo-londra.jpg?s=612x612&w=0&k=20&c=RAThrJOBY6vhlT6-kQpu9-9jLEzWToYfdw46S8B0Mu0=" />
+                </div>
+            </div>
+            <script src="javascript/script.js"></script>
+        </div>
+    </div>
+    <div class="footer-section">
+        <div class="footer-item">
+            <h2>Company</h2>
+            <p><a href=""> About Us</a></p>
+            <p><a href=""> Contact Us</a></p>
+            <p><a href=""> Our Services</a></p>
+            <p><a href=""> Privacy Policy</a></p>
+        </div>
+        <div class="footer-item social">
+            <h2> Follow Us </h2>
+            <ul>
+                <li><a href="https://www.instagram.com/accounts/login/"><i class="fa-brands fa-instagram">
+                        </i></a>
+                </li>
+                <li><a href="https://web.whatsapp.com/"><i class="fa-brands fa-linkedin-in"></i></a> </li>
+                <li><a href="https://www.youtube.com/account"> <i class="fa-brands fa-youtube"></i></a> </li>
+                <li> <i class="fa-brands fa-twitter"></i> </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

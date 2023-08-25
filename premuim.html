@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>premuim</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .thecontainer {
+            height: 500px;
+            width: 350px;
+            perspective: 800px;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .thecard {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            transform-style: preserve-3d;
+            transition: transform 1500ms;
+        }
+
+        .front {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+            background: #ffc728;
+            color: #333;
+            border-radius: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .thecontainer:hover>.thecard {
+            cursor: pointer;
+            transform: rotateY(180deg);
+        }
+
+        .back {
+            display: flex;
+            border-radius: 2em;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+            background: #b9f2ff;
+            color: #333;
+            transform: rotateY(180deg);
+        }
+
+        .back1 {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 2em;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+            background: #FFD700;
+            color: #333;
+            transform: rotateY(180deg);
+        }
+
+        .back2 {
+            padding: 20px;
+            display: flex;
+            border-radius: 2em;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+            background: #C0C0C0;
+            color: #333;
+            transform: rotateY(180deg);
+        }
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-section {
+            width: 100%;
+            display: flex;
+            color: white;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 1rem 0;
+            background-color: rgb(32, 30, 30);
+        }
+
+        .footer-section h2 {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .footer-section h2::after {
+            content: '';
+            width: 6rem;
+            height: .2rem;
+            background: #e65b00;
+            position: absolute;
+            top: 2.5rem;
+            left: 0;
+        }
+
+        .footer-section p {
+            transition: all .2s linear;
+            margin-bottom: .6em;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .footer-section p:hover {
+            transition: all .2s linear;
+            transform: translateX(4px);
+        }
+
+        .footer-section a:hover {
+            color: #f46d13;
+        }
+
+        .footer-item {
+            margin: 1rem;
+        }
+
+        .footer-item ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .footer-item li {
+            margin-right: 1rem;
+        }
+
+        .social ul li {
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all .2s linear;
+        }
+
+        .social ul li:hover {
+            color: #e65b00;
+            transform: scale(1.1);
+            transition: all .2s linear;
+        }
+
+        @media screen and (max-width: 320px) {
+            .footer-section {
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-left: 2rem;
+            }
+        }
+
+        .nav a {
+            color: black;
+        }
+
+        .nav a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+        button a:hover {
+            color: wheat;
+        }
+
+        button a {
+            color: black !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class=" nav navbar navbar-expand-lg bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-size: larger;">Perfect Date</a>
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                </ul>
+                <ul class="navbar-nav " style="font-size:larger;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ex2.html">Log out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">
+                            Profile
+                        </a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+    <div style="margin-top: 100px;">
+        <h2 class="text-center">Welcome to premuim</h2>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="thecontainer">
+                    <div class="thecard">
+                        <div class="front" style="background-color: #b9f2ff !important;">Diamond</div>
+                        <div class="back">
+                            <h4 class="pb-5" style="display:flex;justify-content: center;">Diamond</h4>
+                            Unlock all of our features in Diamond subscription
+                            . Features like Unlimited likes,10 super likes daily are available in Diamond.<br>
+                            <b class="mt-5" style="display:flex;justify-content: center;">PRICE: 5000</b>
+                            <button type="button" class="mt-5 btn btn-outline-info"
+                                style="width: 35%;align-self: center;"><a href="credit/src/index.html">Buy
+                                    now</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="thecontainer">
+                    <div class="thecard">
+                        <div class="front" style="background-color: #FFD700 !important;">Gold</div>
+                        <div class="back1">
+                            <h4 class="pb-5" style="display:flex;justify-content: center;">Gold</h4>
+                            Unlock most of features in Gold subscription.Features like Unlimited backtracks,See who
+                            already liked you etc are available in Gold.
+                            <b class="mt-5" style="display:flex;justify-content: center;">PRICE: 2000</b>
+                            <button type="button" class="mt-5 btn btn-outline-warning"><a
+                                    href="credit/src/index.html">Buy
+                                    now</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="thecontainer">
+                    <div class="thecard">
+                        <div class="front" style="background-color: #C0C0C0 !important;">Silver</div>
+                        <div class="back2">
+                            <h4 class="pb-5" style="display:flex;justify-content: center;">Silver</h4>
+                            Unlock features like Advanced filters,Enhanced recommendations,Travel mode in
+                            Silver subscription.<br>
+                            <b class="mt-5" style="display:flex;justify-content: center;">PRICE: 1000</b>
+                            <button type="button" class="mt-5 btn btn-outline-secondary"><a
+                                    href="credit/src/index.html">Buy
+                                    now</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container m-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>What you get: </th>
+                    <th>Diamond</th>
+                    <th>Gold</th>
+                    <th>Silver</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>Unlimited likes</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>no</td>
+            </tr>
+            <tr>
+                <td>See Who already liked you</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>no</td>
+            </tr>
+            <tr>
+                <td>Advanced filters</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>yes</td>
+            </tr>
+            <tr>
+                <td>Unlimited backtracks</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>no</td>
+            </tr>
+            <tr>
+                <td>Enhanced recommendations</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>yes</td>
+            </tr>
+            <tr>
+                <td>10 super likes</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>no</td>
+            </tr>
+            <tr>
+                <td>Travel mode</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>yes</td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer-section">
+        <div class="footer-item">
+            <h2>Company</h2>
+            <p><a href=""> About Us</a></p>
+            <p><a href=""> Contact Us</a></p>
+            <p><a href=""> Our Services</a></p>
+            <p><a href=""> Privacy Policy</a></p>
+        </div>
+        <div class="footer-item social">
+            <h2> Follow Us </h2>
+            <ul>
+                <li> <i class="fa-brands fa-instagram"></i>
+                </li>
+                <li> <i class="fa-brands fa-linkedin-in"></i> </li>
+                <li> <i class="fa-brands fa-youtube"></i> </li>
+                <li> <i class="fa-brands fa-twitter"></i> </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
